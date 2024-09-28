@@ -1,0 +1,115 @@
+[09:41:43][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[09:41:44][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 755 ms
+[09:41:44][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[09:41:44][INFO ][FrameworkServlet.java: 547] - Completed initialization in 692 ms
+[09:42:36][INFO ][MemberController.java: 65] - login : User [userId=admin, userPwd=admin, userName=null]
+[09:52:34][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[09:52:35][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 707 ms
+[09:52:35][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[09:52:36][INFO ][FrameworkServlet.java: 547] - Completed initialization in 694 ms
+[10:04:17][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[10:04:18][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 718 ms
+[10:04:18][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[10:04:19][INFO ][FrameworkServlet.java: 547] - Completed initialization in 699 ms
+[10:23:07][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[10:23:08][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 716 ms
+[10:23:08][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[10:23:09][INFO ][FrameworkServlet.java: 547] - Completed initialization in 717 ms
+[11:34:44][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[11:34:45][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 721 ms
+[11:34:45][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[11:34:45][INFO ][FrameworkServlet.java: 547] - Completed initialization in 698 ms
+[12:07:56][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[12:07:57][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 730 ms
+[12:07:57][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[12:07:57][INFO ][FrameworkServlet.java: 547] - Completed initialization in 688 ms
+[12:10:06][INFO ][MemberController.java: 115] - enroll.do : Member [userId=user01, userPwd=pass01, userName=홍길동, gender=M, age=29, phone=010-1234-5678, email=hongkd@test.org, enrollDate=null, lastModified=null, signType=null, adminYN=null, loginOk=null, photoFileName=youngK.webp]
+[12:10:06][INFO ][MemberController.java: 121] - after encode : $2a$10$wily4GMaqUNCG9Vq7PjXt.QfLp4twbKEmpFBsMSibYuhNm1rvpGlC, length : 60
+[12:10:17][INFO ][MemberController.java: 65] - login : User [userId=user01, userPwd=pass01, userName=null]
+[12:57:54][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[12:57:55][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 709 ms
+[12:57:55][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[12:57:56][INFO ][FrameworkServlet.java: 547] - Completed initialization in 712 ms
+[12:59:53][INFO ][MemberController.java: 138] - enroll.do : Member [userId=user02, userPwd=pass02, userName=영케이, gender=M, age=25, phone=010-1212-7878, email=youngk@test.org, enrollDate=null, lastModified=null, signType=null, adminYN=null, loginOk=null, photoFileName=null]
+[12:59:53][INFO ][MemberController.java: 144] - after encode : $2a$10$tq.7CMEg3KXFEWJz33T63enoni.vkJbAMGfmHopcMWJAXiXh3gAI2, length : 60
+[12:59:53][INFO ][MemberController.java: 150] - savePath : D:\spring_workspace\first\src\main\webapp\resources\photo_files
+[13:00:07][INFO ][MemberController.java: 68] - login : User [userId=user02, userPwd=pass02, userName=null]
+[14:25:46][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[14:25:47][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 700 ms
+[14:25:47][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[14:25:48][INFO ][FrameworkServlet.java: 547] - Completed initialization in 745 ms
+[14:26:27][INFO ][MemberController.java: 68] - login : User [userId=user01, userPwd=pass01, userName=null]
+[14:26:33][INFO ][MemberController.java: 195] - myinfo.do : user01
+[14:27:44][INFO ][MemberController.java: 195] - myinfo.do : user01
+[14:56:21][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[14:56:22][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 704 ms
+[14:56:22][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[14:56:22][INFO ][FrameworkServlet.java: 547] - Completed initialization in 712 ms
+[14:57:00][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[14:57:00][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 720 ms
+[14:57:01][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[14:57:01][INFO ][FrameworkServlet.java: 547] - Completed initialization in 709 ms
+[15:00:39][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[15:00:40][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 691 ms
+[15:00:40][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[15:00:41][INFO ][FrameworkServlet.java: 547] - Completed initialization in 711 ms
+[15:12:41][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[15:12:42][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 717 ms
+[15:12:42][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[15:12:43][INFO ][FrameworkServlet.java: 547] - Completed initialization in 753 ms
+[15:13:10][INFO ][MemberController.java: 68] - login : User [userId=admin, userPwd=admin, userName=null]
+[15:13:51][INFO ][MemberController.java: 68] - login : User [userId=user01, userPwd=pass01, userName=null]
+[15:14:04][INFO ][MemberController.java: 195] - myinfo.do : user01
+[15:55:26][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[15:55:26][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 715 ms
+[15:55:26][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[15:55:27][INFO ][FrameworkServlet.java: 547] - Completed initialization in 672 ms
+[15:57:07][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[15:57:07][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 711 ms
+[15:57:07][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[15:57:08][INFO ][FrameworkServlet.java: 547] - Completed initialization in 729 ms
+[15:57:50][INFO ][MemberController.java: 68] - login : User [userId=user77, userPwd=pass77, userName=null]
+[15:57:57][INFO ][MemberController.java: 195] - myinfo.do : user77
+[16:17:39][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[16:17:39][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 727 ms
+[16:17:40][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[16:17:40][INFO ][FrameworkServlet.java: 547] - Completed initialization in 715 ms
+[16:18:26][INFO ][MemberController.java: 68] - login : User [userId=user02, userPwd=pass02, userName=null]
+[16:18:29][INFO ][MemberController.java: 196] - myinfo.do : user02
+[16:20:26][INFO ][MemberController.java: 68] - login : User [userId=user02, userPwd=pass02, userName=null]
+[16:20:30][INFO ][MemberController.java: 196] - myinfo.do : user02
+[16:22:04][INFO ][MemberController.java: 196] - myinfo.do : user02
+[16:29:03][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[16:29:04][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 702 ms
+[16:29:04][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[16:29:04][INFO ][FrameworkServlet.java: 547] - Completed initialization in 719 ms
+[16:29:16][INFO ][MemberController.java: 196] - myinfo.do : user02
+[16:29:22][INFO ][MemberController.java: 196] - myinfo.do : user02
+[16:29:22][INFO ][MemberController.java: 196] - myinfo.do : user02
+[16:29:22][INFO ][MemberController.java: 196] - myinfo.do : user02
+[16:29:22][INFO ][MemberController.java: 196] - myinfo.do : user02
+[16:40:11][INFO ][MemberController.java: 68] - login : User [userId=user02, userPwd=pass02, userName=null]
+[16:40:14][INFO ][MemberController.java: 196] - myinfo.do : user02
+[16:58:31][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[16:58:31][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 718 ms
+[16:58:31][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[16:58:32][INFO ][FrameworkServlet.java: 547] - Completed initialization in 714 ms
+[16:58:48][INFO ][MemberController.java: 196] - myinfo.do : user02
+[16:59:36][INFO ][MemberController.java: 196] - myinfo.do : user02
+[17:41:06][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[17:41:07][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 725 ms
+[17:41:07][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[17:41:07][INFO ][FrameworkServlet.java: 547] - Completed initialization in 757 ms
+[17:41:40][INFO ][MemberController.java: 68] - login : User [userId=user77, userPwd=pass77, userName=null]
+[17:41:44][INFO ][MemberController.java: 196] - myinfo.do : user77
+[17:45:10][INFO ][MemberController.java: 68] - login : User [userId=user01, userPwd=pass01, userName=null]
+[17:45:13][INFO ][MemberController.java: 196] - myinfo.do : user01
+[18:11:17][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[18:11:18][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 713 ms
+[18:11:18][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[18:11:19][INFO ][FrameworkServlet.java: 547] - Completed initialization in 780 ms
+[18:12:44][INFO ][MemberController.java: 196] - myinfo.do : user01
+[18:13:16][INFO ][MemberController.java: 222] - mupdate.do : Member [userId=user01, userPwd=, userName=홍길동, gender=M, age=45, phone=010-1234-5678, email=gongyou@test.org, enrollDate=null, lastModified=null, signType=null, adminYN=null, loginOk=null, photoFileName=null]
+[18:13:16][INFO ][MemberController.java: 227] - after encode : $2a$10$OE3TyeNIZpD5hioo8n7hD.vP7c37PWqqSO2JBqZ0jBGD.pvRuI8dS, length : 60
+[18:13:16][INFO ][MemberController.java: 237] - savePath : D:\spring_workspace\first\src\main\webapp\resources\photo_files
+[18:13:24][INFO ][MemberController.java: 196] - myinfo.do : user01

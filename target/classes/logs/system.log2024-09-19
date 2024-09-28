@@ -1,0 +1,51 @@
+[09:41:57][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[09:41:57][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 455 ms
+[09:41:57][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[09:41:58][INFO ][FrameworkServlet.java: 547] - Completed initialization in 442 ms
+[10:26:53][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[10:26:53][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 650 ms
+[10:26:53][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[10:26:54][INFO ][FrameworkServlet.java: 547] - Completed initialization in 431 ms
+[10:49:39][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[10:49:39][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 682 ms
+[10:49:39][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[10:49:40][INFO ][FrameworkServlet.java: 547] - Completed initialization in 412 ms
+[11:07:47][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[11:07:47][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 689 ms
+[11:07:47][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[11:07:48][INFO ][FrameworkServlet.java: 547] - Completed initialization in 438 ms
+[11:13:18][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[11:13:19][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 696 ms
+[11:13:19][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[11:13:19][INFO ][FrameworkServlet.java: 547] - Completed initialization in 429 ms
+[11:14:27][INFO ][MemberController.java: 107] - enroll.do : Member [userId=user77, userPwd=pass77, userName=강길동, gender=M, age=35, phone=010-1212-4545, email=kangkd@test.org, enrollDate=null, lastModified=null, signType=null, adminYN=null, loginOk=null, photoFileName=null]
+[11:14:28][INFO ][MemberController.java: 113] - after encode : $2a$10$UsCX9hjfN3kGim63XLgcr.qW2Z5wqM1aDnDP7fWxR4a8LqKip7/b., length : 60
+[11:49:50][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[11:49:51][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 696 ms
+[11:49:51][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[11:49:51][INFO ][FrameworkServlet.java: 547] - Completed initialization in 442 ms
+[11:50:19][INFO ][MemberController.java: 65] - login : User [userId=user77, userPwd=pass77, userName=null]
+[11:52:19][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[11:52:19][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 705 ms
+[11:52:19][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[11:52:20][INFO ][FrameworkServlet.java: 547] - Completed initialization in 433 ms
+[11:52:25][INFO ][MemberController.java: 65] - login : User [userId=user77, userPwd=pass77, userName=null]
+[11:56:56][INFO ][MemberController.java: 115] - enroll.do : Member [userId=admin, userPwd=admin, userName=관리자, gender=M, age=35, phone=010-1111-9999, email=admin@ncs.kr, enrollDate=null, lastModified=null, signType=null, adminYN=null, loginOk=null, photoFileName=null]
+[11:56:56][INFO ][MemberController.java: 121] - after encode : $2a$10$JmArVEb7YvhBfgAam4q72uXZYfIWfEMn2xyQW.kOCyH1EEVIc45A6, length : 60
+[11:57:06][INFO ][MemberController.java: 65] - login : User [userId=admin, userPwd=admin, userName=null]
+[12:07:42][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[12:07:42][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 708 ms
+[12:07:42][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[12:07:43][INFO ][FrameworkServlet.java: 547] - Completed initialization in 446 ms
+[12:17:26][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[12:17:27][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 697 ms
+[12:17:27][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[12:17:27][INFO ][FrameworkServlet.java: 547] - Completed initialization in 439 ms
+[12:54:26][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[12:54:26][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 684 ms
+[12:54:26][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[12:54:27][INFO ][FrameworkServlet.java: 547] - Completed initialization in 707 ms
+[13:05:11][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[13:05:12][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 690 ms
+[13:05:12][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[13:05:13][INFO ][FrameworkServlet.java: 547] - Completed initialization in 721 ms

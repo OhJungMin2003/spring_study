@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC
+ "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 마아바티스는 sql 구문에 사용되는 값이 null 이면 에러 발생함.
+		null 을 사용할 수 있게 하려면 아래의 설정을 추가함
+	 -->
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+		<setting name="cacheEnabled" value="false"/>
+	</settings>
+
+	<!-- 존재하지 않는 클래스와 매퍼파일을 먼저 등록 설정하면 에러 발생함 : 톰켓 구동 안됨 -->
+	<typeAliases>	
+		<!-- *-mapper.xml 에서 dto 클래스명을 간단하게 사용하기 위해서 클래스명 줄임말 지정 -->	
+		<typeAlias type="org.myweb.first.member.model.dto.User" alias="User" />	
+		<typeAlias type="org.myweb.first.member.model.dto.Member" alias="Member" />	
+		<typeAlias type="org.myweb.first.test.model.dto.Test" alias="Test" />
+		<typeAlias type="org.myweb.first.board.model.dto.Board" alias="Board" />
+		<typeAlias type="org.myweb.first.notice.model.dto.Notice" alias="Notice" />
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mappers/member-mapper.xml" />
+		<mapper resource="mappers/test-mapper.xml" />
+		<mapper resource="mappers/board-mapper.xml" />
+		<mapper resource="mappers/notice-mapper.xml" />
+	</mappers>
+</configuration>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 데이터베이스 연결 설정 -->
+	<!-- 1. DataSource 등록 -->
+	<!-- import org.apache.commons.dbcp.BasicDataSource; BasicDataSource dataSource 
+		= new BasicDataSource(); try { 드라이버 등록, db 연결 설정 } catch (Exception e) { 
+		에러 처리 } finally { dataSource.close(); } -->
+
+
+	<bean class="org.apache.commons.dbcp.BasicDataSource"
+		id="realDataSource" destroy-method="close">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="username" value="c##testweb" />
+		<property name="password" value="testweb" />
+	</bean>
+
+	<!-- 1-1. 실행할 쿼리문과 쿼리문에 전달되는 값과 ?(#{필드명 또는 변수명}) 에 적용된 구문을 확인하기 위한 로그와 select 
+		쿼리문 실행의 결과인 ResultSet 과 dml 구문(insert, update, delete) 실행 결과 등을 로그로 자동 출력되게 
+		설정함. 이 설정을 하려면 바로 위에서 선언한 DataSource 에 로그 설정을 연결해야 함 pom.xml 에 log4jdbc-remix 
+		라이브러리를 dependency 추가해야 함 import net.sf.log4jdbc.Log4jdbcProxyDataSource; 
+		Log4jdbcProxyDataSource dataSource = new Log4jdbcProxyDataSource(realDataSource); -->
+	<bean id="dataSource"
+		class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+		<constructor-arg ref="realDataSource" />
+		<property name="logFormatter">
+			<bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+				<property name="loggingType" value="MULTI_LINE" />
+				<property name="sqlPrefix" value="[SQL] " />
+			</bean>
+		</property>
+	</bean>
+
+	<!-- 2. 바로 위에서 설정된 dataSource 를 spring 과 mybatis 와 연결 설정 -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean"
+		id="sqlSession">
+		<property name="configLocation"
+			value="classpath:mybatis-config.xml" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 3. dao 에서 사용할 mybatis 객체 생성 설정 -->
+	<bean class="org.mybatis.spring.SqlSessionTemplate"
+		id="sqlSessionTemplate">
+		<constructor-arg ref="sqlSession" index="0" />
+	</bean>
+
+	<!-- 4. 트랜잭션 관리 설정 : AOP(Aspect Oriented Programmin : 관점지향프로그래밍) -->
+	<!-- 4-1. 트랜잭션 관리 클래스 등록 설정 : spring-jdbc -->
+	<bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		id="transactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 4-2. service 클래스에서 필요한 실행시점에서 commit 또는 rollback 이 구동되게 aop 설정 -->	
+	<tx:advice transaction-manager="transactionManager" id="txAdvice">
+		<tx:attributes>
+			<tx:method name="select*" read-only="true" rollback-for="Exception" />
+			<tx:method name="insert*" rollback-for="Exception" />
+			<tx:method name="update*" rollback-for="Exception" />
+			<tx:method name="delete*" rollback-for="Exception" />
+		</tx:attributes>
+	</tx:advice>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />	
+	
+	<aop:config proxy-target-class="true">
+		<aop:pointcut expression="execution(* org.myweb.first..*Impl.*(..))" id="serviceMethod" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod" id="transactionAdvisor" />
+	</aop:config>
+
+</beans>
+
+
+
+
+
+
+
+
+
+

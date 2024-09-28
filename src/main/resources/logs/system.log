@@ -1,0 +1,53 @@
+[09:33:02][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[09:33:02][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 725 ms
+[09:33:02][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[09:33:03][INFO ][FrameworkServlet.java: 547] - Completed initialization in 757 ms
+[10:49:52][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[10:49:53][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 697 ms
+[10:49:53][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[10:49:54][INFO ][FrameworkServlet.java: 547] - Completed initialization in 697 ms
+[10:51:19][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[10:51:20][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 714 ms
+[10:51:20][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[10:51:20][INFO ][FrameworkServlet.java: 547] - Completed initialization in 722 ms
+[11:07:07][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[11:07:08][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 737 ms
+[11:07:08][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[11:07:09][INFO ][FrameworkServlet.java: 547] - Completed initialization in 741 ms
+[12:20:01][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[12:20:01][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 713 ms
+[12:20:01][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[12:20:02][INFO ][FrameworkServlet.java: 547] - Completed initialization in 699 ms
+[12:20:54][INFO ][MemberController.java: 72] - login : User [userId=user02, userPwd=pass02, userName=null]
+[13:13:30][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[13:13:31][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 707 ms
+[13:13:31][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[13:13:32][INFO ][FrameworkServlet.java: 547] - Completed initialization in 698 ms
+[13:14:15][INFO ][MemberController.java: 72] - login : User [userId=user02, userPwd=pass02, userName=null]
+[14:41:42][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[14:41:42][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 726 ms
+[14:41:42][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[14:41:43][INFO ][FrameworkServlet.java: 547] - Completed initialization in 687 ms
+[14:42:26][INFO ][MemberController.java: 72] - login : User [userId=user01, userPwd=pass01, userName=null]
+[15:57:49][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[15:57:49][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 708 ms
+[15:57:49][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[15:57:50][INFO ][FrameworkServlet.java: 547] - Completed initialization in 721 ms
+[15:58:39][INFO ][TestController.java: 233] - message : 에이작스로 파일업로드 테스트
+[15:58:39][INFO ][TestController.java: 234] - mfile : 공유.jpg
+[16:32:57][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[16:32:58][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 694 ms
+[16:32:58][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[16:32:59][INFO ][FrameworkServlet.java: 547] - Completed initialization in 771 ms
+[16:33:34][INFO ][TestController.java: 233] - message : 자바스크립트 ajax 폼전송
+[16:33:34][INFO ][TestController.java: 234] - mfile : youngK.webp
+[17:49:22][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[17:49:22][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 705 ms
+[17:49:22][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[17:49:23][INFO ][FrameworkServlet.java: 547] - Completed initialization in 710 ms
+[17:49:42][INFO ][TestController.java: 252] - down file : sample.txt
+[18:05:12][INFO ][ContextLoader.java: 271] - Root WebApplicationContext: initialization started
+[18:05:12][INFO ][ContextLoader.java: 307] - Root WebApplicationContext initialized in 695 ms
+[18:05:12][INFO ][FrameworkServlet.java: 525] - Initializing Servlet 'appServlet'
+[18:05:13][INFO ][FrameworkServlet.java: 547] - Completed initialization in 724 ms
+[18:05:28][INFO ][TestController.java: 252] - down file : sample.txt

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+ "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="testMapper">
+<!-- namespace (이름공간) == 패키지와 같음 : 매퍼 영역에 이름을 붙여준 것으로 이해하면 됨 -->
+
+	<select id="selectTest" parameterType="Test" resultType="_int">
+		select count(*) from test
+		where name = #{ name } and age = #{ age }
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+

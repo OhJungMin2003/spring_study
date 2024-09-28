@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+ "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+<!-- namespace (이름공간) == 패키지와 같음 : 매퍼 영역에 이름을 붙여준 것으로 이해하면 됨 -->
+
+	<!-- select 조회한 결과 매핑 처리하는 용도의 앨리먼트임 
+		결과매핑 : select 한 행의 컬럼값을 한개씩 dto 객체의 필드에 옮겨 저장하는 것
+		property 는 클래스의 필드명, column 은 데이터베이스 테이블의 컬럼명을 기술하면 됨
+	-->
+	<resultMap id="resultUser" type="User">
+		<result property="userId" column="userid" />
+		<result property="userPwd" column="userpwd" />
+		<result property="userName" column="username" />
+	</resultMap>
+	
+	<resultMap type="Member" id="resultMember">
+		<result property="userId" column="userid" />
+		<result property="userPwd" column="userpwd" />
+		<result property="userName" column="username" />
+		<result property="gender" column="gender" />
+		<result property="age" column="age" />
+		<result property="phone" column="phone" />
+		<result property="email" column="email" />
+		<result property="enrollDate" column="enroll_date" />
+		<result property="lastModified" column="lastmodified" />
+		<result property="signType" column="signtype" />
+		<result property="adminYN" column="admin_yn" />
+		<result property="loginOk" column="login_ok" />
+		<result property="photoFileName" column="photo_filename" />
+	</resultMap>
+	
+	<!-- dao 에서 사용되는 쿼리문(sql문)을 각 앨리먼트 안에 작성함 
+		마이바티스는 기본 PreparedStatement 를 사용함
+		? 를 #{ 변수명 | 필드명 }  필드명을 사용하면 자동으로 getter 가 작동됨
+		resultType 은 반환되는 자료형 표기하면 됨
+		resultMap 은 결과를 매핑할 경우 사용할 resultMap 의 id 명을 표기함
+		단, resultType 과 resultMap 은 둘 중 하나만 사용해야 함
+	-->
+	
+	<!-- <select id="selectLogin" parameterType="User" resultMap="resultUser">
+		select * from users where userid = #{userId} and userpwd = #{userPwd}
+	</select> -->
+	
+	<!-- 내 정보 보기 조회용 쿼리 -->
+	<select id="selectMember" parameterType="string" resultMap="resultMember">
+		select * from member where userid = #{ uid } and login_ok = 'Y'
+	</select>
+	
+	<!-- 회원 가입시 아이디 중복 검사용 쿼리 -->
+	<select id="selectCheckId" parameterType="string" resultType="_int">
+		select count(userid) from member
+		where userid = #{ uid }
+	</select>
+	
+	<!-- 회원 가입용 쿼리 -->
+	<insert id="insertMember" parameterType="Member">
+		insert into member
+		values (#{userId}, #{userPwd}, #{userName}, #{gender}, #{age}, #{phone}, #{email}, 
+		default, default, default, default, default, #{photoFileName})
+	</insert>
+	
+	<!-- 회원 정보 수정용 쿼리 -->
+	<update id="updateMember" parameterType="Member">
+		update member
+		set age = #{ age }, email = #{ email }, phone = #{ phone }, gender = #{ gender },
+			lastmodified = sysdate, userpwd = #{ userPwd }, photo_filename = #{ photoFileName }
+		where userid = #{ userId }
+	</update>
+	
+	<!-- 회원 정보 삭제용 쿼리 -->
+	<delete id="deleteMember" parameterType="string">
+		delete from member where userid = #{ uid }
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+

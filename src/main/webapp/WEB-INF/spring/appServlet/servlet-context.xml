@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!-- 컨트롤러가 리턴하는 뷰 파일명을 받아서, /WEB-INF/views/리턴받은파일명.jsp 
+	해당 위치에 있는 파일을 찾아서 클라이언트에게로 내보내는 일을 함 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="order" value="1" />
+	</beans:bean>
+	
+	<!-- 파일 다운을 위한 뷰클래스 실행하는 뷰리졸버 등록함
+		주의 : id 속성을 사용하면 안 됨
+		여러 개의 뷰리졸버를 등록할 때는 실행 순서를 정해야 함
+		파일 다운용 뷰리졸버가 반드시 맨처음 실행되게 순서를 지정함
+		컨트롤러가 리턴하는 뷰이름과 일치하는 뷰클래스가 있으면, 자동으로 해당 뷰클래스가 실행됨
+		뷰이름과 일치하는 뷰클래스가 없으면 다음 순서인 뷰리졸버로 리턴값이 넘어감
+	 -->
+	<beans:bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<beans:property name="order" value="0" />
+		<!-- 제일 먼저 실행되도록 순번 지정함 -->
+	</beans:bean>
+	
+	<!-- ajax 통신으로 컨트롤러가 JsonObject 를 jsonString 으로 변환해서 리턴하면, 작동할 뷰리졸버를 추가 등록해야 함
+		pom.xml 에 dependency 로 추가한 다음 사용해야 함
+	 -->
+	<beans:bean class="net.sf.json.spring.web.servlet.view.JsonView" id="jsonView"></beans:bean> 
+	
+	
+	<context:component-scan base-package="org.myweb.first" />
+	<!-- 1. 브라우저에서 클라이언트가 요청을 보냄
+		2. 웹서버의 서버엔진(톰켓) 위에서 구동되고 있는 에플리케이션의 web.xml 로 전송옴
+		3. web.xml 에서는 *.do 로 오는 요청은 스프링이 제공하는 DispatcherServlet 클래스로 전달함
+		4. 디스패처서블릿은 초기설정 파라메터에 지정한 내용대로 동작이 됨
+			4-1. component-scan 에 설정된 패키지 아래에서 요청온 *.do 의 매핑이름을 찾는다.
+				*.do 는 스프링에서 Controller 클래스 안의 메소드에 설정하도록 되어 있음
+			4-2. 매핑이름이 설정된 컨트롤러 클래스 안의 메소드를 찾아서 실행함 
+				(요청값도 전달이 됨 => 메소드 매개변수가 받음)
+				즉, 컨트롤러의 메소드 하나가 서블릿기반의 서블릿클래스 하나임
+			4-3. 서비스 -> dao 로 보내서 쿼리실행후 결과 리턴
+			4-4. 모델에서 받은 결과를 request 나 session 에 저장 처리함
+			4-5. 내보낼 뷰 파일명(String)을 리턴함
+		5. 컨틀롤러 메소드에서 리턴된 뷰파일명을 설정된 뷰리졸버가 받음
+			뷰리졸버는 설정된 폴더 아래에서 jsp 파일을 찾아서 내보냄
+	 -->	
+	
+	<!-- 작성된 클래스 등록은 어노테이션을 이용해서 자동 등록 처리함 
+		직접 등록시에는 아래와 같이 컨트롤러, 서비스, 리포지토리(dao) 클래스 하나씩 등록함 -->
+	<!-- <beans:bean
+		class="org.myweb.first.member.controller.MemberController">
+	</beans:bean> -->
+	
+	<!-- 파일 업로드용 클래스 등록 : 업로드시 파일 용량 제한 설정도 함께 해야 함 (대략 10메가바이트) -->	
+	<beans:bean
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		id="multipartResolver">
+		<beans:property name="maxUploadSize" value="10000000" />
+	</beans:bean>
+
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	
+	
+	
+	
+</beans:beans>

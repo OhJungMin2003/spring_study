@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+ "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noticeMapper">
+	<!-- namespace (이름공간) == 패키지와 같음 : 매퍼 영역에 이름을 붙여준 것으로 이해하면 됨 -->
+
+	<resultMap type="Notice" id="resultNotice">
+		<result property="noticeNo" column="NOTICENO" />
+		<result property="noticeTitle" column="NOTICETITLE" />
+		<result property="noticeDate" column="NOTICEDATE" />
+		<result property="noticeWriter" column="NOTICEWRITER" />
+		<result property="noticeContent" column="NOTICECONTENT" />
+		<result property="originalFilePath" column="ORIGINAL_FILEPATH" />
+		<result property="renameFilePath" column="RENAME_FILEPATH" />
+		<result property="importance" column="IMPORTANCE" />
+		<result property="impEndDate" column="IMP_END_DATE" />
+		<result property="readCount" column="READCOUNT" />
+	</resultMap>
+
+	<resultMap type="Notice" id="resultTop3">
+		<result property="noticeNo" column="NOTICENO" />
+		<result property="noticeTitle" column="NOTICETITLE" />
+		<result property="noticeDate" column="NOTICEDATE" />
+	</resultMap>
+	
+	<select id="selectList" resultMap="resultNotice">
+		select *
+		from notice
+		order by importance desc, noticedate desc
+	</select>
+	
+	<!-- ajax 테스트용 : 최근 등록된 마지막 공지글 한 개 조회용 -->
+	<select id="selectLast" resultMap="resultNotice">
+		select * from notice
+		where
+		noticeno = (select max(noticeno) from notice)
+	</select>
+
+	<!-- ajax 요청 : 최근 등록 게시글 3개 조회용 (top-N) -->
+	<select id="selectTop3" resultMap="resultTop3">
+		SELECT *
+		FROM (SELECT ROWNUM
+		RNUM, NOTICENO, NOTICETITLE, NOTICEDATE
+		FROM (SELECT * FROM NOTICE
+		WHERE IMPORTANCE = 'N'
+		ORDER BY NOTICEDATE DESC, NOTICENO DESC) )
+		WHERE RNUM BETWEEN 1 AND 3
+	</select>
+
+	<!-- 공지 제목 검색용 쿼리 -->
+	<select id="selectSearchTitleKeyword" parameterType="string"
+		resultMap="resultNotice">
+		select * from notice
+		where noticetitle like '%' || #{ keyword
+		} || '%'
+		order by importance desc, noticeno desc
+	</select>
+
+	<select id="selectNotice" parameterType="_int"
+		resultMap="resultNotice">
+		select *
+		from notice
+		where noticeno= #{ no }
+	</select>
+
+	<!-- 새 공지글 등록용 쿼리 -->
+	<insert id="insertNotice" parameterType="Notice">
+		insert into notice
+		<if test="importance != null">
+			values ((select max(noticeno) + 1 from notice),
+			#{
+			noticeTitle }, sysdate, #{ noticeWriter }, #{ noticeContent },
+			#{
+			originalFilePath }, #{ renameFilePath }, #{ importance }, #{
+			impEndDate }, default)
+		</if>
+		<if test="importance == null">
+			values ((select max(noticeno) + 1 from notice),
+			#{
+			noticeTitle }, sysdate, #{ noticeWriter }, #{ noticeContent },
+			#{
+			originalFilePath }, #{ renameFilePath }, default, sysdate, default)
+		</if>
+	</insert>
+
+	<!-- 조회수 1증가 처리용 쿼리 -->
+	<update id="updateAddReadCount" parameterType="_int">
+		update notice
+		set readcount = readcount + 1
+		where noticeno = #{ no }
+	</update>
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
